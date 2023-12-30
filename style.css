@@ -15,5 +15,99 @@ html, body {height: 100%; margin: 0; padding: 0;}
 body {
   background-color: var(--background);
   font-family: 'Roboto', sans-serif;
-  font-weight: 100;
+}
+nav {
+
+}
+header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: visible;
+}
+.text {
+  margin-top: 32vh;
+  margin-left: 5vw;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+}
+.highlight {
+  font-weight: 600;
+  color: var(--accent);
+}
+.title {
+  font-size: 2.3rem;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 5vh;
+  color: var(--accent);
+}
+.special {
+  font-weight: 400;
+  color: inherit
+}
+.start {
+  all: unset;
+  width: 400px;
+  border: 2px solid var(--primary);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 5vw;
+  margin-top: 5vh;
+  font-size: 1.5rem;
+
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.start::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: left;
+  transform-origin: left;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+.start:hover::before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: var(--primary);
+}
+.start::after {
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+}
+.start:hover {
+  color: var(--bg, white);
+}
+.start:active {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(0.95);
 }
